@@ -4,8 +4,8 @@ pipeline {
     stage('Build'){
       steps{
         sh '''
-          docker build -t meme-generator .
-          docker run meme-generator
+          npm install 
+          npm start
          '''
       }
     }
