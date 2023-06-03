@@ -4,7 +4,8 @@ pipeline {
     stage('Build'){
       steps{
         sh '''
-          sudo docker-compose -f docker-compose-prod.yml up --build
+          docker build -t meme-generator .
+          docker run meme-generator
          '''
       }
     }
