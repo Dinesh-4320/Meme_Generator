@@ -1,0 +1,7 @@
+node_modules
+Dockerfile
+.gitignore
+.dockerignore
+*.yml
+meme-generator.yaml
+minikube-linux-amd64

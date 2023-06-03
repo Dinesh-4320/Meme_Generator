@@ -1,0 +1,91 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+nav{
+  background-color: orange;
+  display: flex;
+  font-family: 'Poppins',sans-serif;
+  color:white;
+}
+
+nav h1{
+  padding:10px;
+}
+
+.project-no{
+  margin-left:60%;
+}
+
+.form{
+  margin: 35px;
+  display:grid;
+  grid-template: 40px 40px / auto auto;
+  row-gap:10px;
+  column-gap: 30px;
+  row-gap: 25px;
+}
+
+.form-input{
+  padding:10px;
+  font-weight: bold;
+}
+
+.form-input:focus{
+  box-shadow:2px 2px 2px  blueviolet;
+  border:3px solid blueviolet;
+  border-radius: 10px;
+}
+
+.form-button{
+  grid-column: 1/-1;
+  color:white;
+  font-weight:bold;
+  color:white;
+  background-color: blueviolet;
+  border-color: blueviolet;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.form-button:hover{
+  background-color: rgb(138,43,255);
+}
+
+.meme-container{
+  margin:auto;
+  max-width: 450px;
+  min-height: fit-content;
+  box-shadow: 2px 5px 5px black;
+  position: relative;
+  color: white;
+  font-family: Impact;
+  font-size: 75%;
+  text-transform: uppercase;
+  text-shadow:2px 2px 0 #000;
+  letter-spacing: 1px;
+  text-shadow:2px 2px 0 #000,
+  -2px -2px 0 #000,
+  2px -2px 0 #000,
+  -2px 2px 0 #000,
+  0px 2px 0 #000,
+  2px 0px 0 #000,
+  0px -2px 0 #000,
+  -2px 0px 0 #000,
+  2px 2px 5px #000;
+}
+
+.meme-container h1{
+  margin-left: 35%;
+}
+
+.topline{
+  top:20px;
+  position: absolute;
+}
+
+.bottomline{
+  bottom: 20px;
+  position: absolute;
+}
