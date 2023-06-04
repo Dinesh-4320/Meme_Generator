@@ -1,13 +1,22 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+       image 'node:20-alpine3.17'
+       args '-p 3000:3000' 
+    }
+  }
+  environment{
+      CI='true' 
+    }
   stages {
     stage('Build'){
       steps{
         sh '''
           npm install 
-          npm start
          '''
       }
+    }
+    stage('Test'){
     }
   }
 }
