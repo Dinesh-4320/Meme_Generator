@@ -1,4 +1,4 @@
-export default{
+const data={
     "success": true,
     "data": {
         "memes" : [
@@ -110,4 +110,6 @@ export default{
             {"id":"360597639","name":"whe i'm in a competition and my opponent is","url":"https:/i.imgflip.com/5youx3.jpg","width":916,"height":900,"box_count":2,"captions":0}]
         }
     }
+
+export default data
 
