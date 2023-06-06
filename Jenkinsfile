@@ -16,5 +16,12 @@ pipeline {
          '''
       }
     }
+    stage('Deliver'){
+      steps{
+        sh '''
+          npm start
+        '''
+      }
+    }
   }
 }
