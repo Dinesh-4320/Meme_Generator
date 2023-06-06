@@ -19,7 +19,7 @@ pipeline {
     stage('Deliver'){
       steps{
         sh '''
-          npm start
+          npm run build
         '''
       }
     }
