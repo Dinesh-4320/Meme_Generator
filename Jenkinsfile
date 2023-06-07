@@ -1,10 +1,20 @@
 pipeline {
-  agent any
+  agent docker{
+   image 'node'
+   args ' -p 3000:3000 -u root:root '
+  }
   stages{
+    stage('Build'){
+      steps{
+        sh '''
+          npm install
+        '''
+      }
+    }
     stage('Deliver'){
       steps{
         sh '''
-          docker-compose -f docker-compose-prod.yml up --build
+          npm run build
         '''
       }
     }
