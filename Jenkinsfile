@@ -25,7 +25,7 @@ pipeline {
             makeEmptyDirs: false, 
             noDefaultExcludes: false, 
             patternSeparator: '[, ]+', 
-            remoteDirectory: '/home/disciklean/meme-generator', 
+            remoteDirectory: 'meme-generator', 
             remoteDirectorySDF: false, 
             removePrefix: '', 
             sourceFiles: 'build/')
