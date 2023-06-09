@@ -19,8 +19,8 @@ pipeline {
         sshTransfer(
             cleanRemote: true, 
             excludes: '', 
-            execCommand: '''ansible-playbooks -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-localhost.yml
-            ansible-playbooks -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-docker.yml''',
+            execCommand: '''ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-localhost.yml
+            ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-docker.yml''',
             execTimeout: 120000, 
             flatten: false, 
             makeEmptyDirs: false, 
