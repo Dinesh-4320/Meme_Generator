@@ -17,7 +17,7 @@ pipeline {
         configName: 'ansible', 
         transfers: [
         sshTransfer(
-            cleanRemote: false, 
+            cleanRemote: true, 
             excludes: '', 
             execCommand: ' ', 
             execTimeout: 120000, 
