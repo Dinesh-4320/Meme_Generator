@@ -28,7 +28,7 @@ pipeline {
             remoteDirectory: '/home/disciklean/meme-generator', 
             remoteDirectorySDF: false, 
             removePrefix: '', 
-            sourceFiles: '/build')
+            sourceFiles: 'build/')
           ], 
         usePromotionTimestamp: false, 
         useWorkspaceInPromotion: false, 
