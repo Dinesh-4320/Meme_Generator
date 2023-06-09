@@ -25,7 +25,7 @@ pipeline {
             makeEmptyDirs: false, 
             noDefaultExcludes: false, 
             patternSeparator: '[, ]+', 
-            remoteDirectory: 'meme-generator', 
+            remoteDirectory: '', 
             remoteDirectorySDF: false, 
             removePrefix: '', 
             sourceFiles: 'build/')
