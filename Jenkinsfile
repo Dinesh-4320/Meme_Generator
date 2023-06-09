@@ -17,7 +17,7 @@ pipeline {
         configName: 'ansible', 
         transfers: [
         sshTransfer(
-            cleanRemote: true, 
+            cleanRemote: false, 
             excludes: '', 
             execCommand: '''ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-localhost.yml
             ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-docker.yml''',
