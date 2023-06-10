@@ -24,7 +24,8 @@ pipeline {
         verbose: false)
           ]
       )
-      }
+     }
+    }
     stage('Deploying through Docker container') {
       steps([$class: 'BapSshPromotionPublisherPlugin']) {
         sshPublisher(
