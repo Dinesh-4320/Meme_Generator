@@ -1,6 +1,12 @@
 pipeline {
   agent any
   stages{
+    stage('OWASP Dependancy Check'){
+      steps{
+        dependencyCheck additionalArguments: '''-f HTML 
+        -s ./''', odcInstallation: 'OWASP-Dependancy-Check'
+      }
+    }  
     stage('Build'){
       steps{
         sh '''
