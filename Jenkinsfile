@@ -35,7 +35,7 @@ pipeline {
         sshTransfer(
           execCommand: '''ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-localhost.yml
           ansible-playbook -i /home/disciklean/meme-generator/hosts /home/disciklean/meme-generator/ansible-docker.yml''',
-          execTimeout: 120000
+          execTimeout: 120000)
           ], 
         usePromotionTimestamp: false, 
         useWorkspaceInPromotion: false, 
