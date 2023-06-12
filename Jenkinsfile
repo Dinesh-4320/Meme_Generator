@@ -8,9 +8,11 @@ pipeline {
       }
     }
     stage('SonarQube Analysis') {
-      def scannerHome = tool 'SonarQubeScanner';
-      withSonarQubeEnv() {
-        sh "${scannerHome}/bin/sonar-scanner"
+      def scannerHome = tool 'Meme-Sonar-Scanner';
+      steps{
+        withSonarQubeEnv(SonarQubeServer) {
+          sh "${scannerHome}/bin/sonar-scanner"
+        }
       }
     }
     stage('Build'){
