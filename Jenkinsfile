@@ -8,7 +8,7 @@ pipeline {
       }
     }
     stage('SonarQube Analysis') {
-      def scannerHome = tool 'Meme-Sonar-Scanner';
+      def scannerHome = tool 'SonarQube Scanner 4.8.0.2856';
       steps{
         withSonarQubeEnv(SonarQubeServer) {
           sh "${scannerHome}/bin/sonar-scanner"
