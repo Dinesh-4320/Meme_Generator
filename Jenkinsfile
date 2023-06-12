@@ -7,11 +7,10 @@ pipeline {
         -s ./''', odcInstallation: 'OWASP-Dependancy-Check'
       }
     }
-        stage('SonarQube Analysis') {
-        def scannerHome = tool 'SonarQubeScanner';
-        withSonarQubeEnv() {
-          sh "${scannerHome}/bin/sonar-scanner"
-        }
+    stage('SonarQube Analysis') {
+      def scannerHome = tool 'SonarQubeScanner';
+      withSonarQubeEnv() {
+        sh "${scannerHome}/bin/sonar-scanner"
       }
     }
     stage('Build'){
