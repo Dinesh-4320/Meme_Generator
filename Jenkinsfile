@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  tools{
-    sonarQube 'SonarQube Scanner 4.8.0.2856'
-  }
   stages{
     stage('OWASP Dependancy Check'){
       steps{
@@ -12,8 +9,11 @@ pipeline {
     }
     stage('SonarQube Analysis') {
       steps{
+        script{
+          def scannerHome = tool 'Meme-Sonar-Scanner'
+        }
         withSonarQubeEnv(SonarQubeServer) {
-          sh "sonar-scanner"
+          sh "${scannerHome}/bin/sonar-scanner"
         }
       }
     }
