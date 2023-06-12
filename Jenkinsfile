@@ -14,9 +14,9 @@ pipeline {
         }
         withSonarQubeEnv('SonarQubeServer') {
           sh '''
-          /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Meme-Sonar-Scanner/bin/sonar-scanner \
+          /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Meme-Sonar-Scanner/bin/sonar-scanner -X \
           -Dsonar.projectKey=Meme-Generator-Scan \
-          -D sonar.host.url=http://192.168.43.253:9000 \
+          -D sonar.host.url=http://127.0.0.1:9000 \
           -D sonar.login=sqp_a1cf4154cbd5a8ce062b46a527cfb8d6cc5cae99
           '''
         }
