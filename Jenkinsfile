@@ -12,7 +12,7 @@ pipeline {
         script{
           def scannerHome = tool 'Meme-Sonar-Scanner'
         }
-        withSonarQubeEnv(SonarQubeServer) {
+        withSonarQubeEnv('SonarQubeServer') {
           sh "${scannerHome}/bin/sonar-scanner"
         }
       }
