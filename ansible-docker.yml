@@ -1,0 +1,23 @@
+- name: Pulling and running the docker image
+  hosts: docker
+  become: yes
+  become_user: dockerhost
+
+  tasks:
+    - name: Stopping the running container
+      command: docker stop meme-generator
+      ignore_errors: yes
+
+    - name: Removing the container
+      command: docker rm meme-generator
+      ignore_errors: yes
+
+    - name: Removing the existing image
+      command: docker rmi disciklean/meme-generator
+      ignore_errors: yes
+
+    - name: Pulling the image from dockerhub
+      command: docker pull disciklean/meme-generator:latest
+
+    - name: Running the image pulled
+      command: docker run -d -p 80:80 --name meme-generator disciklean/meme-generator

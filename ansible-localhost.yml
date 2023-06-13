@@ -1,0 +1,19 @@
+- name: Building and pushing image to dockerhub
+  hosts: localhost
+  become: yes
+  become_user: disciklean
+
+  tasks:
+    - name: Building the docker image
+      command: docker build -t meme-generator .
+      args:
+        chdir: /home/disciklean/meme-generator
+
+    - name: Tagging the docker image
+      command: docker tag meme-generator disciklean/meme-generator:latest
+
+    - name: Pushing the docker image
+      command: docker push disciklean/meme-generator:latest
+
+    - name: Removing the built and tagged image
+      command: docker rmi meme-generator disciklean/meme-generator:latest
