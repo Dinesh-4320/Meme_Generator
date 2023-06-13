@@ -15,5 +15,5 @@ The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
 
-This meme-generator application is developed as a part of practicing deployment of React applications in the cloud infrastructure using cloud principles.
+This meme-generator application is developed as a part of practicing deployment of React applications in the cloud infrastructure using DevOps and cloud principles.
 
