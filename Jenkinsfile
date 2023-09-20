@@ -17,7 +17,7 @@ pipeline {
           /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Meme-Sonar-Scanner/bin/sonar-scanner -X \
           -Dsonar.projectKey=Meme-Generator-Scan \
           -D sonar.host.url=http://127.0.0.1:9000 \
-          -D sonar.login=sqp_a1cf4154cbd5a8ce062b46a527cfb8d6cc5cae99
+          -D sonar.login=sqp_46b19f514fcd2172a69fe86b6c62ea9b2b8c11f7
           '''
         }
       }
