@@ -47,7 +47,7 @@ pipeline {
       )
      }
     }
-    stage('Build'){
+    stage('DAST'){
       steps{
         sh '''
           docker run -v $(PWD):/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://35.174.115.224:80 --auto
