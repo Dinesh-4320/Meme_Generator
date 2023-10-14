@@ -47,13 +47,6 @@ pipeline {
       )
      }
     }
-    stage('DAST'){
-      steps{
-        sh '''
-          docker run -v $(PWD):/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://35.174.115.224:80 --auto
-        '''
-      }
-    }
     stage('Deploying through Docker container') {
       steps([$class: 'BapSshPromotionPublisherPlugin']) {
         sshPublisher(
@@ -71,6 +64,13 @@ pipeline {
         verbose: false)
           ]
       )
+      }
+    }
+    stage('DAST'){
+      steps{
+        sh '''
+          docker run -v $(PWD):/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://35.174.115.224:80 --auto
+        '''
       }
     }
   }
