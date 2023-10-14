@@ -15,9 +15,9 @@ pipeline {
         withSonarQubeEnv('SonarQubeServer') {
           sh '''
           /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Meme-Sonar-Scanner/bin/sonar-scanner -X \
-          -Dsonar.projectKey=Meme-Generator-Scan \
+          -Dsonar.projectKey=MemeGenerator \
           -D sonar.host.url=http://127.0.0.1:9000 \
-          -D sonar.login=sqp_46b19f514fcd2172a69fe86b6c62ea9b2b8c11f7
+          -D sonar.login=sqa_8c50db09b1ed8b1833399e24418b104e3fccc28a
           '''
         }
       }
@@ -69,7 +69,7 @@ pipeline {
     stage('DAST'){
       steps{
         sh '''
-          docker run -v $(PWD):/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://3.94.92.57 --auto
+          docker run -v $(PWD):/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://54.237.154.64 --auto
         '''
       }
     }
