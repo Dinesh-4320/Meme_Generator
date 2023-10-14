@@ -69,7 +69,7 @@ pipeline {
     stage('DAST'){
       steps{
         sh '''
-          docker run -v ${PWD}:/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://3.88.45.137 --auto
+          docker run -v ${PWD}:/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t https://3.88.45.137:80 --auto
         '''
       }
     }
