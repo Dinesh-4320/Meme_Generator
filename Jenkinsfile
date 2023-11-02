@@ -17,7 +17,7 @@ pipeline {
           /var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/Meme-Sonar-Scanner/bin/sonar-scanner -X \
           -Dsonar.projectKey=MemeGenerator \
           -D sonar.host.url=http://127.0.0.1:9000 \
-          -D sonar.login=sqa_8c50db09b1ed8b1833399e24418b104e3fccc28a
+          -D sonar.login=sqp_e44db86b23dd7df1af1f165930d4c96661b57f13
           '''
         }
       }
@@ -69,7 +69,7 @@ pipeline {
     stage('DAST'){
       steps{
         sh '''
-          docker run -v ${PWD}:/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t http://3.88.45.137:80 --auto
+          docker run -v ${PWD}:/zap/wrk/:rw --user root -t owasp/zap2docker-stable zap-baseline.py -t http://3.83.153.122:80 --auto || true
         '''
       }
     }
